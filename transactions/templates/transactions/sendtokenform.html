@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="card">
+    <div class="card-body p-3">
+        <form action="{%url 'sendtoken'%}" method="post"> {%csrf_token%}
+            <input type="text" name="receiver" class="" placeholder="Enter receiver's username"> <br>
+            <input type="number" name="token_amount" placeholder="Enter the quantity of token"> <br>
+            <button class="btn btn-success btn-sm" type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
+{%endblock%}
