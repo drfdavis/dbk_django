@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body{
+  background-color: rgb(17 24 39)!important;
+  background-image: url(../images/wavylinesstretch.svg);
+  background-position: center top, center center;
+} 
+
+.btn-drb {
+  background-image: linear-gradient(to right,#9333ea,#2563eb);
+}
+
+.btn-drb:disabled{
+  cursor: not-allowed;
+  background-image: rgb(156 163 175);
+}
+
+.card-drb {
+  background-color: rgb(31 41 55);
+  color: rgb(156 163 175);
+  border-radius: 8px;
+} 
+
+.text-gray {
+  color: rgb(156 163 175);
+
+}
+
+.form-control,
+.password-form-control {
+    border-radius: 4px;
+}
+
+.password-form-control input[type="text"],
+.password-form-control input[type="password"] {
+    width: calc(100% - 80px);
+    border: none; outline: none;
+}
+
+
+.showPasswordBtn {
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  font-size: .754rem;
+}
+
+.password-form-control {
+    display: flex;
+    align-items: center;
+}
+
+.form-control{
+  background-color: rgb(17 24 39);
+}

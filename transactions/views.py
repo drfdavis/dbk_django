@@ -19,12 +19,18 @@ def sendToken(request):
         receiver = request.POST['receiver']
         tokens_qty = request.POST['token_amount']
 
+        
         receiver_profile = Profile.objects.get(user__username=receiver)#.user#.username
         
-       
         # print('Sender token:',sender.profile.tokens)
         # print('receiver token:',receiver_profile.tokens)
+        
+        sender.profile.tokens -= int(tokens_qty)
+        sender.profile.save()
 
+        receiver_profile.tokens += int(tokens_qty) 
+        receiver_profile.save()
+        
         try:
             transaction = Transaction.objects.get(transaction_id=_tranaction_id(request))
         except Transaction.DoesNotExist:

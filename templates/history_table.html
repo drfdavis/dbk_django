@@ -145,7 +145,7 @@
                                     <h6>Transaction History</h6>
                                     <p class="text-sm mb-0">
                                         <i class="fa fa-check text-info" aria-hidden="true"></i>
-                                        <span class="font-weight-bold ms-1">30 done</span> this month
+                                        <span class="font-weight-bold ms-1">{{all_transactions.count}} done</span> this month
                                     </p>
                                 </div>
                                 <div class="col-lg-6 col-5 my-auto text-end">
@@ -187,30 +187,31 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {%for transaction in all_transactions%}
                                         <tr>
                                             <td>
                                                 <div class="d-flex px-2 py-1">
                                                    
                                                     <div class="d-flex flex-column justify-content-center">
-                                                        <h6 class="mb-0 text-sm">Soft UI XD Version</h6>
+                                                        <h6 class="mb-0 text-sm">{{transaction.sender}}</h6>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td>
-                                                
+                                                {{transaction.receiver}}
                                             </td>
                                            
 
-                                            <td class="align-middle">
-                                                
+                                            <td class="">
+                                                {{transaction.transaction}}
                                             </td>
 
                                             <td class="align-middle text-center text-sm">
-                                                <span class="text-xs font-weight-bold"> 14,000 </span>
+                                                <span class="text-xs font-weight-bold"> {{transaction.token_quantity}} </span>
                                             </td>
                                             
                                         </tr>
-                                       
+                                       {%endfor%}
                                     </tbody>
                                 </table>
                             </div>

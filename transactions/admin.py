@@ -4,4 +4,11 @@ from django.contrib import admin
 from .models import Transaction, TransactionItem
 
 admin.site.register(Transaction)
-admin.site.register(TransactionItem)
+
+
+
+class TransactionItemAdmin(admin.ModelAdmin):
+    list_display = ['sender','receiver','transaction','token_quantity','is_active']
+     
+
+admin.site.register(TransactionItem,TransactionItemAdmin)
