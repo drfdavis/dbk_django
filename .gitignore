@@ -3,6 +3,11 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
 
 ### Django ###
+/.build
+
+**/*.pyc
+*-env/
+
 *.log
 *.pot
 *.pyc
